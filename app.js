@@ -1,37 +1,31 @@
-var express = require('express');
-var app = express();
-var mysql = require('mysql');
-var myConnection = require('express-myconnection');
-var config = require('./config');
-var hbs = require('hbs');
-var path = require('path')
-
-var dbOptions = {
+const express = require('express');
+const app = express();
+const mysql = require('mysql');
+const myConnection = require('express-myconnection');
+const config = require('./config');
+const hbs = require('hbs');
+const path = require('path')
+const dbOptions = {
 	host: config.database.host, //database host
 	user: config.database.user, //db user
 	password: config.database.password, //db password
 	port: config.database.port, //db port
 	database: config.database.db //db name 
 };
-
-var index = require('./routes/');
-var expressValidator = require('express-validator');
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
-var flash = require('express-flash');
-var cookieParser = require('cookie-parser');
-var session = require('express-session');
-var router = require('express-router');
+const index = require('./routes/');
+const expressValidator = require('express-validator');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+const flash = require('express-flash');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const router = require('express-router');
 
 app.use(myConnection(mysql, dbOptions, 'request'));
-
-app.set('view engine', 'hbs');
-
 app.use(expressValidator());
-
 app.use(methodOverride(function (req, res) {
 	if (req.body && typeof req.body === 'object' && '_method' in req.body) {
-		var method = req.body._method
+		const method = req.body._method
 		delete req.body._method
 		return method
 	}
@@ -41,7 +35,6 @@ app.use(bodyParser.urlencoded({
 }));
 app.use("/public", express.static(path.join(__dirname, 'public')));
 app.use(cookieParser('fedexForm'));
-
 app.use(session({
 	secret: 'fedexForm',
 	resave: false,
@@ -50,29 +43,25 @@ app.use(session({
 		maxAge: 60000
 	}
 }));
-
 app.use(flash());
-
 app.use('/', index);
-
+app.set('view engine', 'hbs');
 app.listen(config.server.port, function () {
 	console.log('Endereço em que o express está sendo executado: ' + config.server.host + ' | ' + 'Porta:' + config.server.port)
 });
-
 app.get('/inserir', function (req, res, next) {
 	res.redirect('/');
 });
-
-// inserir NEW USER POST ACTION
 app.post('/inserir', function (req, res, next) {
-	req.assert('departament', "Campo 'DEPARTAMENT' necessário ").notEmpty().isAlpha(); //Validate departament
-	req.assert('unit', "Campo 'UNIT' necessário ").notEmpty().isAlpha(); //Validate unit
-	req.assert('budget', "Campo 'BUDGET' necessário ").notEmpty(); //Validate budget
-	req.assert('sendersName', "Campo 'SENDER'S NAME' necessário ").notEmpty().isAlpha(); //Validate sender's name
-	req.assert('authorizationSignature', "Campo 'AUTHORIZATION SIGNATURE' necessário ").notEmpty().isAlpha(); //Validate authorization signature
-	req.assert('descriptionOfItem', "Campo 'DESCRIPTION OF ITEM' necessário ").notEmpty(); //Validate description of item
 
-	var errors = req.validationErrors();
+	req.check('departament').notEmpty().isAlpha(); //Validate departament
+	req.check('unit').notEmpty().isAlpha(); //Validate unit
+	req.check('budget').notEmpty(); //Validate budget
+	req.check('sendersName').notEmpty().isAlpha(); //Validate sender's name
+	req.check('authorizationSignature').notEmpty().isAlpha(); //Validate authorization signature
+	req.check('descriptionOfItem').notEmpty(); //Validate description of item
+
+	const errors = req.validationErrors();
 	var fedexForm;
 
 	fedexForm = {
@@ -80,8 +69,8 @@ app.post('/inserir', function (req, res, next) {
 		departamento: req.sanitize('departament').trim().toUpperCase(),
 		unidade: req.sanitize('unit').trim().toUpperCase(),
 		descricao: req.sanitize('descriptionOfItem').trim().toUpperCase(),
-		budget: req.sanitize('budget').trim().toUpperCase(),
-		sendes_name: req.sanitize('sendersName').trim().toUpperCase(),
+		budget: req.sanitize('budget'),
+		sendes_name: req.sanitize('sendersName'),
 		autorizacao_assinatura: req.sanitize('authorizationSignature').trim().toUpperCase()
 	};
 	if (!errors) { //No errors were found.  Passed Validation!
@@ -92,11 +81,10 @@ app.post('/inserir', function (req, res, next) {
 					throw err;
 					req.flash('error', err);
 					res.render('fedexform', {
-						title: 'Fedex Authorization Form',
 						fedexForm
 					});
 				} else {
-					var lastId = result.insertId;
+					const lastId = result.insertId;
 					res.render('fedexformPrint', {
 						lastId: lastId,
 						fedexForm: fedexForm
@@ -106,7 +94,6 @@ app.post('/inserir', function (req, res, next) {
 		});
 	} else {
 		res.render('fedexform', {
-			title: 'Fedex Authorization Form',
 			fedexForm
 		});
 	}

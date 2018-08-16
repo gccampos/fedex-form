@@ -19,30 +19,30 @@
         <br>
         <br>
         <br>
-        <br>
     </div>
 
     <div class="container">
 
         <div class="container">
-            <label for="formId">
+            <label for="lastId">
                 <h5><i><b>FORM IDENTIFICATION NUMBER:</b></i></h5>
             </label>
-            <input type="number" readonly class="form-control-plaintext" style="font-size: larger" id="formId" name="formId" value={{lastId}}>
+            <input type="number" readonly class="form-control-plaintext" style="font-size: larger;  " id="lastId" name="lastId" value={{lastId}}>
         </div>
 
         <div class="container">
             <label for="date">
-               <h5><i><b>DATE:</b></i></h5>
+                <h5><i><b>DATE:</b></i></h5>
             </label>
-            <input type="datetime" readonly class="form-control-plaintext " style="font-size: larger" id="date" name="date" value={{fedexForm.date}}>
+            <input type="datetime" readonly class="form-control-plaintext" style="font-size: larger" id="date" name="date" value={{fedexForm.date}}>
         </div>
 
         <div class="container">
             <label for="departament">
                 <h5><i><b>DEPARTAMENT:</b></i></h5>
             </label>
-            <input type="text" readonly class="form-control-plaintext " style="font-size: larger" id="departament" name="departament" value={{fedexForm.departamento}}>
+            <input type="text" readonly class="form-control-plaintext" style="font-size: larger" id="departament" name="departament"
+                value={{fedexForm.departamento}}>
         </div>
 
         <div class="container">
@@ -54,7 +54,7 @@
 
         <div class="container">
             <label for="budget">
-              <h5><i><b>BUDGET:</b></i></h5>
+                <h5><i><b>BUDGET:</b></i></h5>
             </label>
             <input type="text" readonly class="form-control-plaintext" style="font-size: larger" id="budget" name="budget" value={{fedexForm.budget}}>
         </div>
@@ -63,21 +63,24 @@
             <label for="sendersName">
                 <h5><i><b>SENDER'S NAME:</b></i></h5>
             </label>
-            <input type="text" readonly class="form-control-plaintext" style="font-size: larger" id="sendersName" name="sendersName" value={{fedexForm.sendes_name}}>
+            <input type="text" readonly class="form-control-plaintext" style="font-size: larger" id="sendersName" name="sendersName"
+                value={{fedexForm.sendes_name}}>
         </div>
 
         <div class="container ">
             <label for="authorizationSignature ">
                 <h5><i><b>AUTHORIZATION SIGNATURE:</b></i></h5>
             </label>
-            <input type="text " readonly class="form-control-plaintext" style="font-size: larger" id="authorizationSignature" name="authorizationSignature" value={{fedexForm.autorizacao_assinatura}}>
+            <input type="text " readonly class="form-control-plaintext" style="font-size: larger" id="authorizationSignature" name="authorizationSignature"
+                value={{fedexForm.autorizacao_assinatura}}>
         </div>
 
         <div class="container ">
             <label for="descriptionOfItem ">
-              <h5><i><b>DESCRIPTION OF ITEM:</b></i></h5>
+                <h5><i><b>DESCRIPTION OF ITEM:</b></i></h5>
             </label>
-            <input type="text" readonly class="form-control-plaintext" style="font-size: larger"  rows="3" id="descriptionOfItem" name="descriptionOfItem" value={{fedexForm.descricao}}>
+            <input type="text" readonly class="form-control-plaintext" style="font-size: larger" rows="3" id="descriptionOfItem" name="descriptionOfItem"
+                value={{fedexForm.descricao}}>
 
         </div>
 

@@ -20,48 +20,50 @@
 
     <div class="container">
         <form action="/inserir" method="post" name="fedexForm">
+
             <div class="container form-group row">
-                <label for="departament">
-                    <b>DEPARTAMENT:</b>
-                </label>
+                <label for="departament"><b>DEPARTAMENT:</b></label>
                 <label style="color:red">
                     *
                 </label>
-                <input type="text" class="form-control" id="somenteLetras" name="departament" placeholder="Enter Departament" required value={{fedexForm.departamento}}>
+                <input type="text" class="form-control" id="somenteLetras" name="departament" placeholder="Enter Departament" required="required"
+                    pattern="[a-zA-Z\s]+" title="Por favor, preencha o campo somente com letras" value={{fedexForm.departamento}}>
             </div>
 
-            <div class="container form-group row ">
+            <div class="container form-group row">
                 <label for="unit">
                     <b>UNIT:</b>
                 </label>
                 <label style="color:red">
                     *
                 </label>
-                <input type="text" class="form-control " id="somenteLetras" name="unit" placeholder="Enter Unit" required value={{fedexForm.unidade}}>
+                <input type="text" class="form-control" id="somenteLetras" name="unit" placeholder="Enter Unit" required="required" pattern="[a-zA-Z\s]+"
+                    title="Por favor, preencha o campo somente com letras" value={{fedexForm.unidade}}>
             </div>
 
-            <div class="container form-group row ">
+            <div class="container form-group row">
                 <label for="budget">
                     <b>BUDGET:</b>
                 </label>
-                <label style="color:red">
+                <label style="color:red ">
                     *
                 </label>
-                <input type="text" class="form-control" id="budget" name="budget" placeholder="Enter Budget" required value={{fedexForm.budget}}>
+                <input type="text" class="form-control" id="budget" name="budget " placeholder="Enter Budget " required="required" pattern="[a-zA-Zzs]+"
+                    title="Por favor, preencha o campo somente com letras" value={{fedexForm.budget}}>
             </div>
 
-            <div class="container form-group row ">
+            <div class="container form-group row">
                 <label for="sendersName">
                     <b>SENDER'S NAME:</b>
                 </label>
-                <label style="color:red">
+                <label style="color:red ">
                     *
                 </label>
-                <input type="text" class="form-control" id="somenteLetras" name="sendersName" placeholder="Enter Sender's Name" required
-                    value={{fedexForm.sendes_name}}>
+                <input type="text " class="form-control" id="somenteLetras " name="sendersName " placeholder="Enter Sender 's Name" required="required"
+                    pattern="[a-zA-Z\s]+" title="Por favor, preencha o campo somente com letras" value={{fedexForm.sendes_name}}>
             </div>
 
-            <div class="container form-group row ">
+            <div class="container form-group row">
                 <label for="authorizationSignature">
                     <b>AUTHORIZATION SIGNATURE:</b>
                 </label>
@@ -69,7 +71,7 @@
                     *
                 </label>
                 <input type="text" class="form-control" id="somenteLetras" name="authorizationSignature" placeholder="Enter Authorization Signature"
-                    required value={{fedexForm.autorizacao_assinatura}}>
+                    required="required" pattern="[a-zA-Z\s]+" title="Por favor, preencha o campo somente com letras" value={{fedexForm.autorizacao_assinatura}}>
             </div>
 
             <div class="container form-group row ">
@@ -80,11 +82,12 @@
                     *
                 </label>
                 <textarea class="form-control" rows="4" id="descriptionOfItem" name="descriptionOfItem" placeholder="Enter Description of Item"
-                    required>{{fedexForm.descricao}}</textarea>
+                    required="required">{{fedexForm.descricao}}</textarea>
             </div>
 
             <div class="text-center">
-                <button class='btn btn-primary' type="submit" name="inserir" value="inserir"> Click here to save and Print </button>
+                <button class='btn btn-primary ' type="submit" name="inserir" value="inserir"> Click here to save and Print
+                </button>
             </div>
         </form>
     </div>
