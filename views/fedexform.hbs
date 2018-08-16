@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FedEx Authorization Form</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="jumbotron">
+
+    <img class="float-left" src="public/imagens/FedEx.jpg" width="250" height="78" alt="FedEx"></img>
+    <img class="float-right" src="public/imagens/logo.jpg" width="108" height="124  " alt="The British School"></img>
+
+    <div class="text-center">
+        <h1 class="font-weight-light">FEDEX AUTHORIZATION FORM</h1>
+    </div>
+
+    <div class="container">
+        <form action="/inserir" method="post" name="fedexForm">
+            <div class="container form-group row">
+                <label for="departament">
+                    <b>DEPARTAMENT:</b>
+                </label>
+                <label style="color:red">
+                    *
+                </label>
+                <input type="text" class="form-control" id="somenteLetras" name="departament" placeholder="Enter Departament" required value={{fedexForm.departamento}}>
+            </div>
+
+            <div class="container form-group row ">
+                <label for="unit">
+                    <b>UNIT:</b>
+                </label>
+                <label style="color:red">
+                    *
+                </label>
+                <input type="text" class="form-control " id="somenteLetras" name="unit" placeholder="Enter Unit" required value={{fedexForm.unidade}}>
+            </div>
+
+            <div class="container form-group row ">
+                <label for="budget">
+                    <b>BUDGET:</b>
+                </label>
+                <label style="color:red">
+                    *
+                </label>
+                <input type="text" class="form-control" id="budget" name="budget" placeholder="Enter Budget" required value={{fedexForm.budget}}>
+            </div>
+
+            <div class="container form-group row ">
+                <label for="sendersName">
+                    <b>SENDER'S NAME:</b>
+                </label>
+                <label style="color:red">
+                    *
+                </label>
+                <input type="text" class="form-control" id="somenteLetras" name="sendersName" placeholder="Enter Sender's Name" required
+                    value={{fedexForm.sendes_name}}>
+            </div>
+
+            <div class="container form-group row ">
+                <label for="authorizationSignature">
+                    <b>AUTHORIZATION SIGNATURE:</b>
+                </label>
+                <label style="color:red">
+                    *
+                </label>
+                <input type="text" class="form-control" id="somenteLetras" name="authorizationSignature" placeholder="Enter Authorization Signature"
+                    required value={{fedexForm.autorizacao_assinatura}}>
+            </div>
+
+            <div class="container form-group row ">
+                <label for="descriptionOfItem">
+                    <b>DESCRIPTION OF ITEM:</b>
+                </label>
+                <label style="color:red">
+                    *
+                </label>
+                <textarea class="form-control" rows="4" id="descriptionOfItem" name="descriptionOfItem" placeholder="Enter Description of Item"
+                    required>{{fedexForm.descricao}}</textarea>
+            </div>
+
+            <div class="text-center">
+                <button class='btn btn-primary' type="submit" name="inserir" value="inserir"> Click here to save and Print </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+<foot>
+    <div class="text-center" style="color:red">
+
+        <h6> Qualquer dúvida por favor contate-nos através do link abaixo:
+            <br> Any questions please contact us through the link below:
+            <br>
+            <a href="http://192.168.4.16/ocomon/">Service Desk</a>
+        </h6>
+    </div>
+</foot>
+
+</html>

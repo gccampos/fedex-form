@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FedEx Authorization Form</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="jumbotron">
+
+    <img class="float-left" src="public/imagens/FedEx.jpg" width="250" height="78" alt="FedEx"></img>
+    <img class="float-right" src="public/imagens/logo.jpg" width="108" height="124  " alt="The British School"></img>
+
+    <div class="text-center">
+        <h1 class="font-weight-light">FEDEX AUTHORIZATION FORM</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <div class="container">
+
+        <div class="container">
+            <label for="formId">
+                <h5><i><b>FORM IDENTIFICATION NUMBER:</b></i></h5>
+            </label>
+            <input type="number" readonly class="form-control-plaintext" style="font-size: larger" id="formId" name="formId" value={{lastId}}>
+        </div>
+
+        <div class="container">
+            <label for="date">
+               <h5><i><b>DATE:</b></i></h5>
+            </label>
+            <input type="datetime" readonly class="form-control-plaintext " style="font-size: larger" id="date" name="date" value={{fedexForm.date}}>
+        </div>
+
+        <div class="container">
+            <label for="departament">
+                <h5><i><b>DEPARTAMENT:</b></i></h5>
+            </label>
+            <input type="text" readonly class="form-control-plaintext " style="font-size: larger" id="departament" name="departament" value={{fedexForm.departamento}}>
+        </div>
+
+        <div class="container">
+            <label for="unit">
+                <h5><i><b>UNIT:</b></i></h5>
+            </label>
+            <input type="text" readonly class="form-control-plaintext" style="font-size: larger" id="unit" name="unit" value={{fedexForm.unidade}}>
+        </div>
+
+        <div class="container">
+            <label for="budget">
+              <h5><i><b>BUDGET:</b></i></h5>
+            </label>
+            <input type="text" readonly class="form-control-plaintext" style="font-size: larger" id="budget" name="budget" value={{fedexForm.budget}}>
+        </div>
+
+        <div class="container ">
+            <label for="sendersName">
+                <h5><i><b>SENDER'S NAME:</b></i></h5>
+            </label>
+            <input type="text" readonly class="form-control-plaintext" style="font-size: larger" id="sendersName" name="sendersName" value={{fedexForm.sendes_name}}>
+        </div>
+
+        <div class="container ">
+            <label for="authorizationSignature ">
+                <h5><i><b>AUTHORIZATION SIGNATURE:</b></i></h5>
+            </label>
+            <input type="text " readonly class="form-control-plaintext" style="font-size: larger" id="authorizationSignature" name="authorizationSignature" value={{fedexForm.autorizacao_assinatura}}>
+        </div>
+
+        <div class="container ">
+            <label for="descriptionOfItem ">
+              <h5><i><b>DESCRIPTION OF ITEM:</b></i></h5>
+            </label>
+            <input type="text" readonly class="form-control-plaintext" style="font-size: larger"  rows="3" id="descriptionOfItem" name="descriptionOfItem" value={{fedexForm.descricao}}>
+
+        </div>
+
+        <div class="text-center ">
+            <a href="javascript:window.print() ">
+                <img class="float-center " src="public/imagens/imprimir.png ">Imprimir
+                </img>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
