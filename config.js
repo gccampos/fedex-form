@@ -1,15 +1,15 @@
 var config = {
-	database: {
-        host:      'localhost',     // database host
-        user:       'root',         // your database username
-        password: 'root',         // your database password
-        port:       3306,         // default MySQL port
-        db:       'fedexform'         // your database name
+    database: {
+        host: 'localhost', // Endereço
+        user: 'root', // Usuário
+        password: 'root', // Senha
+        port: 3306, // Porta
+        db: 'fedexform' // Nome
     },
-    server: {
-    	host: '127.0.0.1',
-    	port: '3000'
+    server: { //Servidor Express
+        host: '127.0.0.1', //Endereço
+        port: '3000' //Porta
     }
-}
-
-module.exports = config
+};
+//Exporta variável de configuração
+module.exports = config;

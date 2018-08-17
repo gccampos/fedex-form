@@ -9,13 +9,13 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body class="jumbotron">
+<body class="container jumbotron">
 
     <img class="float-left" src="public/imagens/FedEx.jpg" width="250" height="78" alt="FedEx"></img>
-    <img class="float-right" src="public/imagens/logo.jpg" width="108" height="124  " alt="The British School"></img>
+    <img class="float-right" src="public/imagens/logo.jpg" width="250" height="124" alt="The British School"></img>
 
     <div class="text-center">
-        <h1 class="font-weight-light">FEDEX AUTHORIZATION FORM</h1>
+        <h1 class="font-weight-light"><b>FEDEX AUTHORIZATION FORM</b></h1>
     </div>
 
     <div class="container">
@@ -26,8 +26,8 @@
                 <label style="color:red">
                     *
                 </label>
-                <input type="text" class="form-control" id="somenteLetras" name="departament" placeholder="Enter Departament" required="required"
-                    pattern="[a-zA-Z\s]+" title="Por favor, preencha o campo somente com letras" value={{fedexForm.departamento}}>
+                <input class="form-control" id="departament" name="departament" placeholder="Enter Departament" required="required" pattern="[a-zA-Z\s]+"
+                    title="Por favor, preencha o campo somente com letras" value={{fedexForm.departamento}}>
             </div>
 
             <div class="container form-group row">
@@ -37,8 +37,11 @@
                 <label style="color:red">
                     *
                 </label>
-                <input type="text" class="form-control" id="somenteLetras" name="unit" placeholder="Enter Unit" required="required" pattern="[a-zA-Z\s]+"
-                    title="Por favor, preencha o campo somente com letras" value={{fedexForm.unidade}}>
+                <select class="form-control" id="unit" name="unit" placeholder="Unit Select">
+                    <option>Barra da Tijuca</option>
+                    <option>Botafogo</option>
+                    <option>Urca</option>
+                </select>
             </div>
 
             <div class="container form-group row">
@@ -48,8 +51,8 @@
                 <label style="color:red ">
                     *
                 </label>
-                <input type="text" class="form-control" id="budget" name="budget " placeholder="Enter Budget " required="required" pattern="[a-zA-Zzs]+"
-                    title="Por favor, preencha o campo somente com letras" value={{fedexForm.budget}}>
+                <input class="form-control" id="budget" name="budget" placeholder="Enter Budget" required="required" title="Por favor, preencha o campo somente com letras"
+                    value={{fedexForm.budget}}>
             </div>
 
             <div class="container form-group row">
@@ -59,8 +62,8 @@
                 <label style="color:red ">
                     *
                 </label>
-                <input type="text " class="form-control" id="somenteLetras " name="sendersName " placeholder="Enter Sender 's Name" required="required"
-                    pattern="[a-zA-Z\s]+" title="Por favor, preencha o campo somente com letras" value={{fedexForm.sendes_name}}>
+                <input class="form-control" id="sendersName" name="sendersName" placeholder="Enter Sender 's Name" required="required" pattern="[a-zA-Z\s]+"
+                    title="Por favor, preencha o campo somente com letras" value={{fedexForm.sendes_name}}>
             </div>
 
             <div class="container form-group row">
@@ -70,7 +73,7 @@
                 <label style="color:red">
                     *
                 </label>
-                <input type="text" class="form-control" id="somenteLetras" name="authorizationSignature" placeholder="Enter Authorization Signature"
+                <input class="form-control" id="authorizationSignature" name="authorizationSignature" placeholder="Enter Authorization Signature"
                     required="required" pattern="[a-zA-Z\s]+" title="Por favor, preencha o campo somente com letras" value={{fedexForm.autorizacao_assinatura}}>
             </div>
 
@@ -86,7 +89,7 @@
             </div>
 
             <div class="text-center">
-                <button class='btn btn-primary ' type="submit" name="inserir" value="inserir"> Click here to save and Print
+                <button class='btn btn-primary' type="submit" name="inserir" value="inserir"> Click here to save and Print
                 </button>
             </div>
         </form>
